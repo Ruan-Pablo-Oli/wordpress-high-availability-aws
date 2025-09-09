@@ -158,16 +158,6 @@ cd wordpress-high-availability-aws
 
 ---
 
-###  Criar Target Group
-
-- Crie um novo Target Group para o Load Balancer
-- Escolha um nome
-- Escolha a vpc criada
-- Expanda o menu de advanced health check settings
-- Em sucess codes coloque 200-399 (Permite tráfego de redirecionamento)
-- Avance e finalize a criação
-
----
 
 ### 8️⃣ Criando o Auto Scaling Group
 
