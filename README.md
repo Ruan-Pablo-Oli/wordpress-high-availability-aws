@@ -105,6 +105,7 @@ cd wordpress-high-availability-aws
 **Acesse o serviço de RDS no AWS Console**
 
 - Crie um database com engine MySQL
+- Escolha a opção free tier e single zone
 - Defina um nome para instância
 - Defina um master username (ex: `wordpressproject`)
 - Defina uma master password (ex: `wordpress_password`)
@@ -147,10 +148,14 @@ cd wordpress-high-availability-aws
 
 **Acesse o serviço EC2 no console**
 
+- Selecione no menu esquerdo a opção launch template
 - Crie um novo Launch Template
+- Nomeie o templete
+- Coloque as tags necessárias em template tags e em resource tags
 - Selecione a AMI (Amazon Linux 2)
 - Escolha o tipo de instância (ex: t2.micro)
 - Selecione o security group `secg-wordpress-app`
+- Em advanced details
 - Anexe a IAM Role criada anteriormente
 - Configure o User Data para instalar Docker, montar o EFS e rodar o container WordPress (veja script abaixo)
 - Ajuste variáveis como ID do EFS, região, caminho do secret e nome do banco conforme necessário
@@ -169,6 +174,7 @@ cd wordpress-high-availability-aws
 - Anexe a um novo Application Load Balancer (internet facing)
 - Selecione as duas subnets públicas para o Load Balancer
 - Em default routing, escolha para criar um novo target group
+- Vá para a próxima pági
 - Defina desired capacity como 2, min 2, max 4
 - Escolha Target Tracking scaling policy
 - Finalize a criação
